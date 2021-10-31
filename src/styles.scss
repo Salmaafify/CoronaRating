@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+canvas {
+    display: block;
+    box-sizing: border-box;
+    height: 600px !important;
+    width: 600px !important;
+    margin: auto !important;
+}

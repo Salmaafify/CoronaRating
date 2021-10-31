@@ -1,0 +1,38 @@
+<div class="col-md-8 mx-auto mt-3">
+    <h3>Search By Country To Show Details</h3>
+    <ng-select [items]="countries"
+        [virtualScroll]="true"
+        bindLabel="name" 
+        bindValue="name" 
+        [(ngModel)]="selectedCountries"
+        (change)="selectCountry()">
+</ng-select>
+</div>
+<div *ngIf="selectedCountries">
+    <p-chart type="pie" [data]="data" [style]="{'width': '40%'}"></p-chart>
+    <div>
+        <div class="container mt-4 mb-4 px-4">
+            <div class="row gx-5 text-center">
+              <div class="col">
+               <div class="p-3 border bg-info">
+                   <h4>Confirmed</h4>
+                   <p>{{confirmed}}</p>
+               </div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-info">
+                    <h4>Deaths</h4>
+                    <p>{{deaths}}</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-info">
+                    <h4>Recovered</h4>
+                    <p>{{recovered}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-center mt-3 text-danger fw-bold">{{lastUpdate| date:'longDate'}}</p>
+    </div>
+</div>
