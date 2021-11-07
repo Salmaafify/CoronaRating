@@ -10,7 +10,6 @@ import { MenuItem } from 'primeng/api';
 export class NavBarComponent implements OnInit {
 
   items: MenuItem[] = [];
-  activeItem: MenuItem = {};
 
 
   constructor(private router: Router) { }
@@ -24,7 +23,6 @@ export class NavBarComponent implements OnInit {
         this.router.navigate(['countries'])
       }}
   ];
-  this.activeItem = this.items[0];
   }
 
 }
